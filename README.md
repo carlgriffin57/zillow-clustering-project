@@ -1,4 +1,4 @@
-# Predicting Zillow Home Values
+# Predicting Log Error in Zillow Home Values
 
 
 ## Goal
@@ -35,15 +35,43 @@ The log error is defined as logerror=log(Zestimate)−log(SalePrice)
 
 ### Acquire
 
-The Acquire.py module contains several funtions:
+The Acquire.py module contains several functions:
 - Sets up the connection to the MySQL database where the data is stored.
 - Acquires the Zillow data according to a SQL statement.
 - Caches the acquired data locally to speed up processing.
 
 ### Prepare
 
+The Prepare.py module:
+- removes nulls in columns/rows
+- removes outliers
+- creates new columns
+- splits into train, validate, test
+
 ### Explore
+
+The Explore.py module:
+- Once the data is split, explore on train.
+- SQFT with Hypothesis Testing
+- Bathroom Count with Hypothesis Testing
+- Bedroom Count with Hypothesis Testing
 
 ### Model
 
+Baseline model was based on the average log error and had a RMSE score of 0.1717
+Final model chosen was a Polynomial Linear Regression with degree=3 on the top 9 features from SelectKBest.
+
+Train RMSE: 0.0148
+Validate RMSE: 0.1701
+Test RMSE: 0.1838
+
 ### Conclusion
+
+Clusters and features explored did not have a significant difference with respect to log error. More exploration is needed to determine if other clusters can be created.
+
+## How to Reproduce
+-  Read this README.md
+-  Download Acquire.py, Prepare.py, Explore.py, Model.py, and zillow_clustering_project.ipynb in your working directory.
+-  Run the zillow_clustering_project.ipynb in Jupyter Notebook.
+
+
