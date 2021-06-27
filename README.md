@@ -61,9 +61,9 @@ The Explore.py module:
 Baseline model was based on the average log error and had a RMSE score of 0.1717
 Final model chosen was a Polynomial Linear Regression with degree=3 on the top 9 features from SelectKBest.
 
-Train RMSE: 0.0148
-Validate RMSE: 0.1701
-Test RMSE: 0.1838
+- Train RMSE: 0.0148
+- Validate RMSE: 0.1701
+- Test RMSE: 0.1838
 
 ### Conclusion
 
